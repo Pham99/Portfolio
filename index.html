@@ -2,10 +2,10 @@
 <html>
 
 <head>
-	<title>Pham Thanh Tung - Portfolio</title>
+	<title>Pham Thanh Tung</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="styles-test.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
 	<link rel="icon" type="image/png" href="static/smirk.png">
@@ -13,36 +13,47 @@
 
 <body>
 	<div class="background"></div>
-	<div class="main_container">
-		<div class="nameplate"><b>PHAM THANH TUNG</b><span class="top_menu">
-				<div class="menu_item" id="dark_mode_toggle"><i class="fas fa-sun"></i></div>
-			</span>		
+	<div class="scene3D" id="menu_section">
+		<div class="tilt">
+			<div class="text-container"><div class="container"><div class="text-highlight"></div><span class="text" data-target="about_section">ABOUT ME</span></div></div>
+			<div class="text-container"><div class="container"><div class="text-highlight"></div><span class="text" data-target="project_section">PROJECTS</span></div></div>
+			<div class="text-container"><div class="container"><div class="text-highlight"></div><span class="text" data-target="skills_section">SKILLS</span></div></div>
+			<div class="text-container"><div class="container"><div class="text-highlight"></div><span class="text" data-target="education_section">EDUCATION</span></div></div>
+			<div class="text-container"><div class="container"><div class="text-highlight"></div><span class="text" data-target="contacts_section">CONTACT</span></div></div>
 		</div>
-		<!--
-		<div class="scene3D">
-			<span class="text tilt-2">PROJECTS</span>
-			<div class="text tilt-1">SKILLS</div>
-			<div class="text tilt0">EDUCATION</div>
-			<div class="text tilt1">EXPERIENCE</div>
-			<div class="text tilt2">ABOUT ME</div>
-		</div>-->
-		<div class="transparent">
+	</div>
+	<div class="nameplate">
+		<div class="top_menu display-none">
+			<div class="top_menu_container"><div class="top_menu_item_highlight"></div><div class="top_menu_item">Home</div></div>
+			<div class="top_menu_container"><div class="top_menu_item_highlight"></div><div class="top_menu_item" data-target="about_section">About me</div></div>
+			<div class="top_menu_container"><div class="top_menu_item_highlight"></div><div class="top_menu_item" data-target="project_section">Projects</div></div>
+			<div class="top_menu_container"><div class="top_menu_item_highlight"></div><div class="top_menu_item" data-target="skills_section">Skills</div></div>
+			<div class="top_menu_container"><div class="top_menu_item_highlight"></div><div class="top_menu_item" data-target="education_section">Education</div></div>
+			<div class="top_menu_container"><div class="top_menu_item_highlight"></div><div class="top_menu_item" data-target="contacts_section">Contact</div></div>
+		</div>
+		<div class="menu_item" id="dark_mode_toggle"><i class="fas fa-sun"></i></div>
+	</div>
+	<div class="main_container">
+		<div id="about_section" class="main_section display-none">
 			<h1>About me</h1>
 			<p>Welcome to my personal website! I'm excited to share a bit about myself with you.</p>
-			<p>I'm passionate about web development, design, and creating engaging user experiences. In my free time, I enjoy
+			<p>I'm passionate about web development, design, and creating engaging user experiences. In my free time, I
+				enjoy
 				exploring new technologies, reading, and hiking.</p>
 			<p>Feel free to browse around and learn more about my projects and interests!</p>
 		</div>
-				<div>
+		<div id="project_section" class="main_section display-none">
 			<h1>Projects</h1>
-			<div class="flex_container space_between">
+			<div class="flex_container">
 				<div class="project_box">
 					<div class="description">
 						<h2>KvaziGames</h2>
-						<p>A set of multiplayer games inspired by retro games for the purpose of demonstrating the functionality of Mobile Controller for Unity</p>
+						<p>A set of multiplayer games inspired by retro games for the purpose of demonstrating the
+							functionality of Mobile Controller for Unity</p>
 					</div>
 					<div class="tags">
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" />
 					</div>
 					<div class="picture"><img src="static/KvaziGame.jpg" alt="A block puzzle game"></div>
@@ -50,157 +61,201 @@
 				<div class="project_box">
 					<div class="description">
 						<h2>Mobile Controller for Unity</h2>
-						<p>A library/module for the Unity Engine that allows users to connect to a game using a QR code and control it via their mobile phone through a web interface.</p>
+						<p>A library/module for the Unity Engine that allows users to connect to a game using a QR code
+							and control it via their mobile phone through a web interface.</p>
 					</div>
 					<div class="tags">
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" />
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" />
 						<img src="https://az-icons.com/export/icons/a39e7fd3307ff56cc26d5a64eec7bf3f.svg" />
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
 					</div>
 					<div class="picture"><img src="static/MobileController.png" alt="A web based controller"></div>
 				</div>
-				<div class="project_box small_project_box">
+				<div class="project_box">
 					<div class="description">
 						<h2>BlazorKanban</h2>
-						<p>A Kanban board web app made using Blazor. Does CRUD operations using EntityFramework, SQLite and LINQ. It's like a more complicated to-do app.</p>
+						<p>A Kanban board web app made using Blazor. Does CRUD operations using EntityFramework, SQLite
+							and LINQ. It's like a more complicated to-do app.</p>
 					</div>
 					<div class="tags">
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blazor/blazor-original.svg" />
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/entityframeworkcore/entityframeworkcore-original.svg" />
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blazor/blazor-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/entityframeworkcore/entityframeworkcore-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
 					</div>
 					<div class="picture"><img src="static/BlazorKanban.jpg" alt="A Kanban board app"></div>
 				</div>
-				<div class="project_box small_project_box">
+				<div class="project_box">
 					<div class="description">
 						<h2>PaintShop</h2>
-						<p>A Windows Froms app for drawing and applying various filters.</p>
+						<p>A Windows Forms app for drawing and applying various filters.</p>
 					</div>
 					<div class="tags">
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
 					</div>
 					<div class="picture"><img src="static/PaintShop.jpg" alt="A Windows Froms Drawing App"></div>
 				</div>
-				<div class="project_box small_project_box">
+				<div class="project_box">
 					<div class="description">
 						<h2>Portfolio</h2>
-						<p>YOU ARE HERE. A simple, clean, minimal portfolio site. Built using plain HTML, CSS and JavaScript the way God intended.</p>
+						<p>YOU ARE HERE. A simple, clean, minimal portfolio site. Built using plain HTML, CSS and
+							JavaScript the way God intended.</p>
 					</div>
 					<div class="picture"><img src="static/Portfolio.jpg" alt="Portfolio site"></div>
 					<div class="tags">
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
 					</div>
 				</div>
-				<div class="project_box small_project_box">
+				<div class="project_box">
 					<div class="description">
 						<h2>Backgammon</h2>
-						<p>A CLI backgammon game made in Python. Features player vs player, player vs bot, saving/loading to JSON, beautiful ASCII graphics. My first project.</p>
+						<p>A CLI backgammon game made in Python. Features player vs player, player vs bot,
+							saving/loading to JSON, beautiful ASCII graphics. My first project.</p>
 					</div>
 					<div class="tags">
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
 					</div>
 					<div class="picture"><img src="static/vrhcaby.png" alt="CLI Backgammon game"></div>
 				</div>
 			</div>
 		</div>
-		<div>
+		<div id="skills_section" class="main_section display-none">
 			<h1>Tech Stack</h1>
 			<div class="flex_container">
 				<div class="tech_item">
 					<div class="tech_item_text">HTML</div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
 					<div class="tech_item_shine"></div>
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">CSS</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">JavaScript</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+					<img
+						src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">Python</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">C#</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">.NET Core</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" />
+					<img
+						src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">Blazor</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blazor/blazor-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blazor/blazor-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">EF Core</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/entityframeworkcore/entityframeworkcore-original.svg" />
+					<img
+						src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/entityframeworkcore/entityframeworkcore-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">Unity Engine</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">Git</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">GitHubActions</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" />
+					<img
+						src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">SQLite</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">Docker</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">VSCode</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">Oracle Cloud</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" />
 				</div>
 				<div class="tech_item">
 					<div class="tech_item_text">Linux</div>
 					<div class="tech_item_shine"></div>
-            		<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
 				</div>
 			</div>
 		</div>
-		<hr>
+		<!-- placeholders for sections revealed by the menu -->
+		<div id="education_section" class="main_section display-none">
+			<h1>Education</h1>
+			<p>I am currently pursuing my studies in Applied Informatics, with a focus in software development, computer networks, and virtualisation.</p>
+			<ul>
+				<li><strong>Bachelor of Science in Applied Informatics</strong><br>
+					Jan Evangelista Purkyně University<br>
+					Expected Graduation: 2026
+				</li>
+				<li><strong>Relevant Coursework:</strong>
+					<ul>
+						<li>Programming & Algorithms</li>
+						<li>Web Development</li>
+						<li>Software Engineering</li>
+						<li>Relational Databases</li>
+						<li>Object Oriented Design Patterns</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="contacts_section" class="main_section display-none">
+			<h1>Contact Me</h1>
+			<p>If you'd like to get in touch, feel free to reach out through any of the following methods:</p>
+			<ul>
+				<li>Email: <a href="mailto:tomas.phamt@gmail.com">tomas.phamt@gmail.com</a></li>
+			</ul>
+		</div>
+		<!-- <p>Copyright &copy; 2025 lololol who cares, certainly not the AI web scrapers</p> -->
+		<script src="script.js" defer></script>
 	</div>
-	<p>Copyright &copy; 2025 lololol who cares, certainly not the AI web scrapers</p>
-	<script src="script.js" defer></script>
 </body>
 
 </html>

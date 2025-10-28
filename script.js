@@ -1,28 +1,19 @@
 const mainMenuText = document.querySelectorAll('.text');
 const mainMenuTextArray = Array.from(mainMenuText);
+const img = document.querySelectorAll('img');
 
 const darkModeToggle = document.getElementById('dark_mode_toggle');
+const bg = document.querySelector('.background');
 if (darkModeToggle) {
     darkModeToggle.addEventListener('click', () => {
-        const bg = document.querySelector('.background');
         bg.classList.toggle('background_dark');
-        mainMenuText.forEach(item => {
-            item.classList.toggle('text-light');
-        });
         darkModeToggle.children[0].classList.toggle('fa-moon');
         darkModeToggle.children[0].classList.toggle('fa-sun');
-    });
-    darkModeToggle.addEventListener('mouseover', () => {
-        mainMenuText.forEach(item => {
-            item.style.transition = 'color 1s ease-in-out, transform 0.2s';
+        img.forEach(image => {
+            image.classList.toggle('invert');
         });
     });
 }
-mainMenuText.forEach(item => {
-    item.addEventListener('mouseover', () => {
-        item.style.transition = 'color 0.2s ease-in-out, transform 0.2s';
-    });
-});
 
 const techItems = document.querySelectorAll('.tech_item_shine');
 techItems.forEach(item => {
@@ -63,6 +54,8 @@ function reveal(ev) {
     document.getElementById(target).classList.add('animation_fade_in');
 }
 
+const title = document.querySelector('.title-text');
+
 mainMenuTextArray.forEach((el, idx) => {
     el.addEventListener('click', () => {
         scene3D.addEventListener('animationend', addDisplayNone, { once: true });
@@ -79,6 +72,7 @@ mainMenuTextArray.forEach((el, idx) => {
         }
         topMenu.classList.remove('display-none');
         topMenu.classList.add('animation_fade_in');
+        title.classList.add('faded');
     });
 });
 
@@ -114,6 +108,7 @@ topMenuItemsArray.forEach((el, idx) => {
     if (idx === 0){
         el.addEventListener('click', () => {
             toggleMenu();
+            title.classList.remove('faded');
             topMenu.classList.add('animation_fade_out');
             topMenu.addEventListener('animationend', () => {
                 topMenu.classList.add('display-none');
@@ -146,16 +141,3 @@ document.addEventListener('keydown', (e) => {
         about_section.classList.remove('display-none');
     }
 });
-
-
-// const menuSection = document.getElementById('menu_section');
-// if (menuSection) {
-//     menuSection.querySelectorAll('.text[data-target]').forEach(span => {
-//         span.addEventListener('click', () => {
-//             const targetId = span.getAttribute('data-target');
-//             const target = document.getElementById(targetId);
-//             if (!target) return;
-//             target.classList.remove('display-none');
-//         });
-//     });
-// }

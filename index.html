@@ -13,6 +13,13 @@
 
 <body>
 	<div class="background"></div>
+	<div class="title-wrapper">
+		<svg viewBox="0 0 100 20" preserveAspectRatio="none">
+			<text class="title-text" x="0" y="15" textLength="100" lengthAdjust="spacingAndGlyphs">
+				PHAM THANH TUNG
+			</text>
+		</svg>
+	</div>
 	<div class="scene3D" id="menu_section">
 		<div class="tilt">
 			<div class="text-container">
@@ -79,6 +86,7 @@
 			<p>I'm a developer with a focus on C#, .NET and an interest in game development. In my free time, I
 				enjoy
 				exploring new technologies and gaming.</p>
+			<div class="bg-img"></div>
 			<p>Feel free to browse around and learn more about my projects and interests!</p>
 			<div class="flex_container">
 				<div class="button">
@@ -155,6 +163,19 @@
 							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
 					</div>
 					<div class="picture"><img src="static/PaintShop.jpg" alt="A Windows Froms Drawing App"></div>
+				</div>
+				<div class="project_box">
+					<div class="description">
+						<h2>Slop Survivors</h2>
+						<p>A bullet heaven/vampire survivors-like video game made in the Monogame framework.</p>
+					</div>
+					<div class="tags">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/monogame/monogame-original.svg" />
+					</div>
+					<div class="picture"><img src="static/survivors.jpeg" alt="A video game"></div>
 				</div>
 				<div class="project_box">
 					<div class="description">
@@ -295,11 +316,7 @@
 			</ul>
 		</div>
 		<div id="contacts_section" class="main_section display-none">
-			<h1>Contact Me</h1>
-			<p>If you'd like to get in touch, feel free to reach out through any of the following methods:</p>
-			<ul>
-				<li>Email: <a href="mailto:tomas.phamt@gmail.com">tomas.phamt@gmail.com</a></li>
-			</ul>
+			<div class="big"><a href="mailto:tomas.phamt@gmail.com">tomas.phamt@gmail.com</a></div>
 		</div>
 		<!-- <p>Copyright &copy; 2025 lololol who cares, certainly not the AI web scrapers</p> -->
 		<script src="script.js" defer></script>

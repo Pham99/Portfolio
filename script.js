@@ -1,10 +1,10 @@
 // dark mode
-const darkModeToggle = document.getElementById('dark_mode_toggle');
+const darkModeToggle = document.getElementById('dark-mode-toggle');
 const bg = document.querySelector('.background');
 const img = document.querySelectorAll('img');
 if (darkModeToggle) {
     darkModeToggle.addEventListener('click', () => {
-        bg.classList.toggle('background_dark');
+        bg.classList.toggle('background-dark');
         darkModeToggle.children[0].classList.toggle('fa-moon');
         darkModeToggle.children[0].classList.toggle('fa-sun');
         img.forEach(image => {
@@ -14,22 +14,23 @@ if (darkModeToggle) {
 }
 
 // tech item shine 
-const techItems = document.querySelectorAll('.tech_item_shine');
+const techItems = document.querySelectorAll('.tech-item');
 techItems.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        if (!item.classList.contains('shine_animation')) {
-            item.classList.add('shine_animation');
+    const shine = item.getElementsByClassName('tech-item-shine')[0];
+    item.addEventListener('pointerenter', () => {
+        if (!shine.classList.contains('shine-animation')) {
+            shine.classList.add('shine-animation');
         }
     });
     item.addEventListener('animationend', () => {
-        item.classList.remove('shine_animation');
+        shine.classList.remove('shine-animation');
     });
 });
 
-const textArray = Array.from(document.querySelectorAll('.text'));
+const textArray = Array.from(document.querySelectorAll('.main-menu-item'));
 const scene3D = document.getElementsByClassName('scene3D')[0];
-const topMenu = document.getElementsByClassName('top_menu')[0];
-const topMenuItemsArray = Array.from(document.querySelectorAll('.top_menu_item'));
+const topMenu = document.getElementsByClassName('nav-menu')[0];
+const topMenuItemsArray = Array.from(document.querySelectorAll('.nav-menu-item'));
 
 function removeSlideAnimation(el) {
     el.currentTarget.classList.remove('slideSide', 'slideUp', 'slideDown', 'slideSideReverse', 'slideUpReverse', 'slideDownReverse');
@@ -50,11 +51,11 @@ function reveal(ev) {
     if (!ev) return;
     const target = ev.getAttribute('data-target');
     document.getElementById(target).classList.remove('display-none');
-    document.getElementById(target).classList.add('animation_fade_in');
+    document.getElementById(target).classList.add('animation-fade-in');
 }
 
 const title = document.querySelector('.title-text');
-const mainMenuTextArray = Array.from(document.querySelectorAll('.text'));
+const mainMenuTextArray = Array.from(document.querySelectorAll('.main-menu-item'));
 
 mainMenuTextArray.forEach((el, idx) => {
     el.addEventListener('click', () => {
@@ -76,7 +77,7 @@ mainMenuTextArray.forEach((el, idx) => {
         idxy = idx + 1;
         topMenuItemsArray[idxy].classList.add('active');
         topMenu.classList.remove('display-none');
-        //topMenu.classList.add('animation_fade_in');
+        //topMenu.classList.add('animation-fade-in');
         title.classList.add('faded');
         topMenuItemsArray[0].classList.remove('disabled');
     });
@@ -88,7 +89,7 @@ const reverseSlideAnimations = [
     'slideDownReverse'
 ];
 
-const mainContentArray = Array.from(document.querySelectorAll('.main_container > div'));
+const mainContentArray = Array.from(document.querySelectorAll('.main-container > div'));
 function toggleMenu() {
     scene3D.classList.remove('display-none');
     textArray.forEach(e => {
@@ -100,13 +101,13 @@ function toggleMenu() {
 }
 
 topMenu.addEventListener('animationend', () => {
-    topMenu.classList.remove('animation_fade_in');
-    topMenu.classList.remove('animation_fade_out');
+    topMenu.classList.remove('animation-fade-in');
+    topMenu.classList.remove('animation-fade-out');
 });
 
 mainContentArray.forEach(section => {
     section.addEventListener('animationend', () => {
-        section.classList.remove('animation_fade_in');
+        section.classList.remove('animation-fade-in');
     });
 });
 
@@ -116,7 +117,7 @@ topMenuItemsArray.forEach((el, idx) => {
             el.classList.add('disabled');
             toggleMenu();
             title.classList.remove('faded');
-            topMenu.classList.add('animation_fade_out');
+            topMenu.classList.add('animation-fade-out');
             topMenu.addEventListener('animationend', () => {
                 topMenu.classList.add('display-none');
             }, { once: true });
@@ -136,5 +137,28 @@ topMenuItemsArray.forEach((el, idx) => {
             topMenuItemsArray[idx].classList.add('active');
             reveal(el);
         });
+    }
+});
+function closeSideMenu() {
+    const topMenu = document.querySelector('.nav-menu');
+    const overlay = document.querySelector('.nav-menu-overlay');
+    overlay.classList.remove('nav-menu-overlay-active');
+    topMenu.classList.add('nav-menu-hidden');
+}
+
+function openSideMenu() {
+    const topMenu = document.querySelector('.nav-menu');
+    const overlay = document.querySelector('.nav-menu-overlay');
+    overlay.addEventListener('click', closeSideMenu);
+    overlay.classList.add('nav-menu-overlay-active');
+    topMenu.classList.remove('nav-menu-hidden');
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeSideMenu();
+    }
+    if (e.key === 'a') {
+        openSideMenu();
     }
 });

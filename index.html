@@ -160,7 +160,7 @@
 				</div>
 				<div id="skills-section" class=" display-none">
 					<h1>Tech Stack</h1>
-					<div class="flex-container">
+					<div class="flex-container-tech-items">
 						<div class="tech-item">
 							<div class="tech-item-text">HTML</div>
 							<img
@@ -279,8 +279,6 @@
 				<div id="contacts-section" class=" display-none">
 					<div class="big-text"><a href="mailto:tomas.phamt@gmail.com">tomas.phamt@gmail.com</a></div>
 				</div>
-				<!-- <p>Copyright &copy; 2025 lololol who cares, certainly not the AI web scrapers</p> -->
-				<script src="script.js" defer></script>
 			</div>
 			<div class="scene3D" id="menu-section">
 				<div class="tilt">
@@ -293,14 +291,15 @@
 			</div>
 		</div>
 		<div class="header">
-			<svg viewBox="0 0 100 20" preserveAspectRatio="none">
+		    <svg class="hamburger-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/></svg>
+			<svg class="title-text-svg" viewBox="0 0 100 20" preserveAspectRatio="none">
 				<text class="title-text" x="0" y="15" textLength="100" lengthAdjust="spacingAndGlyphs">
 					PHAM THANH TUNG
 				</text>
 			</svg>
 			<div class="nav-menu-container">
 				<div class="nav-menu-overlay"></div>
-				<nav class="nav-menu display-none">
+				<nav class="nav-menu nav-menu-hidden display-none">
 					<div class="nav-menu-item">Home</div>
 					<div class="nav-menu-item" data-target="about-section">About me</div>
 					<div class="nav-menu-item" data-target="project-section">Projects</div>
@@ -313,5 +312,6 @@
 		<div class="theme-toggle" id="dark-mode-toggle"><i class="fas fa-sun"></i></div>
 	</div>
 </body>
+<script src="script.js" defer></script>
 
 </html>

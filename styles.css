@@ -57,14 +57,14 @@ body {
 .main-grid {
     box-sizing: border-box;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: min(8dvw, 120px) 1fr;
     grid-template-areas:
         "title"
         "main-content";
     width: 100%;
     max-width: 1500px;
     height: 100dvh;
-    padding: min(6px, 1%) min(12px, 2%) min(12px, 2%);
+    padding: min(6px, 1%) min(16px, 4%) min(16px, 4%);
     font-family:
         "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
     overflow: hidden;
@@ -117,48 +117,33 @@ a {
     grid-area: title;
     position: relative;
     width: 100%;
-    height: min(8dvw, 120px);
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
+    display: flex;
 }
 
 .header .title-text-svg {
-    display: block;
-    width: 100%;
-    flex: 1 1 auto;
-    transform-origin: top;
-    transform: scaleY(50%);
+    flex: 1 1 100%;
 }
 
 .hamburger-button {
     display: none;
-    height: 100%;
-    width: auto;
+    width: 0%;
     cursor: pointer;
     transform-origin: center;
-    transform: scaleX(0%);
+    transition: width 0.3s ease;
 }
 
 .hamburger-button.expanded {
-    transform: scaleX(100%);
+    width: 9%;
 }
 
 @media screen and (max-width: 1000px) {
-    .header{
-        grid-template-columns: auto 1fr;
-    }
-
     .hamburger-button{
-        display: block;
+   		display: block;
     }
 }
 
 .title-text {
     fill: var(--font-color-heading);
-    mix-blend-mode: multiply;
-    opacity: 1;
     font-size: 20px;
     font-weight: 800;
     font-family: "Times New Roman", Times, serif, sans-serif;
@@ -173,9 +158,6 @@ a {
 }
 
 @media screen and (max-width: 1000px) {
-    .title-wrapper {
-        height: calc(20dvw / 2);
-    }
     .title-text.faded {
         opacity: 1;
     }
@@ -190,7 +172,6 @@ a {
     align-items: center;
     width: 100%;
     min-height: 0;
-    padding: min(12px, 2%) 0 0 0;
 }
 
 .main-container {
@@ -630,11 +611,12 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     perspective: 300px;
 }
 
 .tilt {
-    transform: rotateY(25deg);
+	transform: rotateY(25deg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -702,7 +684,7 @@ a {
 }
 
 @starting-style {
-    .main-menu-item-container {
+    .main-menu-item {
         transform: translateX(-300px);
         opacity: 0%;
     }
